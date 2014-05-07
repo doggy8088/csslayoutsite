@@ -1,0 +1,287 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+      <title>CSS - display: inline-block</title>
+    
+    <meta name="viewport" content="width=600">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/code.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35945753-1']);
+  _gaq.push(['_setDomainName', 'learnlayout.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+  </head>
+  <body class="ltr">
+
+    <div id="logo">
+      <a href="/">
+        <img src="images/logo.png">
+        <span>學習 CSS 版面配置</span>
+      </a>
+    </div>
+
+    <div id="menu">
+      <a class="home-link" href="/">首頁</a>
+      <a href="toc.html">目錄</a>
+    </div>
+
+    <div id="container">
+
+      
+        <h1 class="content">display: inline-block</h1>
+      
+
+      <p class="content">
+  你可以建立一堆區塊自動填滿瀏覽器，在過去很長的一段時間大家都使用 <code>float</code> 來做流動式的自動排版，但現在你可以選擇 <code>display: inline-block</code> 來實作，這方法會更加簡單。使用 <code>display: inline-block</code> 的元素就像 <code>display: inline</code> 的元素一樣，但你可以設定 <code>width</code> 與 <code>height</code> 屬性。讓我們看看以下的例子：
+</p>
+
+<div class="content">
+  <h2>困難的方法（使用 float）</h2>
+</div>
+
+<style>
+  .box {
+    float: left;
+    width: 200px;
+    height: 100px;
+    margin: 1em;
+  }
+  .after-box {
+    clear: left;
+  }
+</style>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.box</span> <span class="p">{</span>
+  <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">1em</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.after-box</span> <span class="p">{</span>
+  <span class="k">clear</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p class="content">
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在漂浮！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在漂浮！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在漂浮！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在漂浮！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在漂浮！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在漂浮！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在漂浮！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在漂浮！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在漂浮！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在漂浮！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+    <div class="box elem">
+      <span class="label">&lt;div class="box"></span>
+      <p>
+        我在漂浮！
+      </p>
+      <span class="endlabel">&lt;/div></span>
+    </div>
+  
+
+  <section class="elem elem-green after-box">
+    <span class="label">&lt;div class="after-box"></span>
+    <p>
+      我使用 <code>clear</code>，所以我不會浮動到上面那堆盒子的旁邊。
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </section>
+</p>
+
+<div class="content">
+  <h2>容易的方法（使用 inline-block）</h2>
+  <p>
+    你可以用 <code>display: inline-block;</code> 來實現相同效果。
+  </p>
+</div>
+
+<style>
+  .box2 {
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    margin: 1em;
+  }
+</style>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.box2</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">1em</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p class="content">
+  <!-- These are on same line because of how significant
+  whitespace works with inline-block. More info:
+  http://learnlayout.com/inline-block-layout.html -->
+  <div class="box2 elem"><span class="label">&lt;div class="box2"></span><p>我是一個行內元素（inline-block）</p><span class="endlabel">&lt;/div></span></div><div class="box2 elem"><span class="label">&lt;div class="box2"></span><p>我是一個行內元素（inline-block）</p><span class="endlabel">&lt;/div></span></div><div class="box2 elem"><span class="label">&lt;div class="box2"></span><p>我是一個行內元素（inline-block）</p><span class="endlabel">&lt;/div></span></div><div class="box2 elem"><span class="label">&lt;div class="box2"></span><p>我是一個行內元素（inline-block）</p><span class="endlabel">&lt;/div></span></div><div class="box2 elem"><span class="label">&lt;div class="box2"></span><p>我是一個行內元素（inline-block）</p><span class="endlabel">&lt;/div></span></div><div class="box2 elem"><span class="label">&lt;div class="box2"></span><p>我是一個行內元素（inline-block）</p><span class="endlabel">&lt;/div></span></div><div class="box2 elem"><span class="label">&lt;div class="box2"></span><p>我是一個行內元素（inline-block）</p><span class="endlabel">&lt;/div></span></div><div class="box2 elem"><span class="label">&lt;div class="box2"></span><p>我是一個行內元素（inline-block）</p><span class="endlabel">&lt;/div></span></div><div class="box2 elem"><span class="label">&lt;div class="box2"></span><p>我是一個行內元素（inline-block）</p><span class="endlabel">&lt;/div></span></div><div class="box2 elem"><span class="label">&lt;div class="box2"></span><p>我是一個行內元素（inline-block）</p><span class="endlabel">&lt;/div></span></div>
+
+  <section class="elem elem-green">
+    <span class="label">&lt;div></span>
+    <p>
+      這次我不需要用 <code>clear</code> 屬性了。讚！
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </section>
+</p>
+
+<p class="content">
+  要使用 <code>inline-block</code> 你得額外做些事來支援 <a href="http://blog.mozilla.org/webdev/2009/02/20/cross-browser-inline-block/">IE6 和 IE7</a>。有些時候人們談到 <code>inline-block</code> 會觸發所謂 <code>hasLayout</code> 的東西，你只需要知道那是用來支持舊版 IE 瀏覽器用的。如果你對此很感興趣，可以在上面那個<a href="http://blog.mozilla.org/webdev/2009/02/20/cross-browser-inline-block/">超連結</a>中找到更詳細的資訊。否則我們就繼續下去吧。
+</p>
+
+      
+
+        <div class="nav-wrapper">
+
+          
+            <a class="nav prev" href="media-queries.html">上一頁</a>
+          
+
+          
+            <a class="nav next" href="inline-block-layout.html">下一頁</a>
+          
+
+        </div>
+
+      
+
+      
+        <footer>
+          15 / 19
+        </footer>
+      
+
+    </div>
+
+    <div id="share">
+
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://learnlayout.com/">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+
+      <li>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Flearnlayout.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+      </li>
+
+      <li>
+        <div class="g-plusone" data-size="medium"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </li>
+
+      <li id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></a>
+      </li>
+
+    </div>
+    <div id="advertisements">
+      <span>Ads by <a href="http://bocoup.com">Bocoup</a></span>
+      <script type="text/javascript">var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+      <script type="text/javascript">
+        var ados = ados || {};
+        ados.run = ados.run || [];
+        ados.run.push(function() {
+          /* load placement for account: Bocoup, site: Learn Layout, size: 0x0 - Static Text Link*/
+          ados_add_placement(4433, 27632, "azk92758", 20);
+          ados_load();
+        });
+      </script>
+      <div id="azk92758"></div>
+    </div>
+
+  </body>
+</html>

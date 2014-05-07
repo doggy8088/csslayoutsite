@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+      <title>CSS - 關於 box-sizing 屬性</title>
+    
+    <meta name="viewport" content="width=600">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/code.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35945753-1']);
+  _gaq.push(['_setDomainName', 'learnlayout.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+  </head>
+  <body class="ltr">
+
+    <div id="logo">
+      <a href="/">
+        <img src="images/logo.png">
+        <span>學習 CSS 版面配置</span>
+      </a>
+    </div>
+
+    <div id="menu">
+      <a class="home-link" href="/">首頁</a>
+      <a href="toc.html">目錄</a>
+    </div>
+
+    <div id="container">
+
+      
+        <h1 class="content">關於 box-sizing 屬性</h1>
+      
+
+      <style>
+  .simple {
+    width: 500px;
+    margin: 20px auto;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+  .fancy {
+    width: 500px;
+    margin: 20px auto;
+    padding: 50px;
+    border: solid #6AC5AC 10px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+</style>
+
+<p class="content">
+  經過了幾個世代的轉變，人們意識到自己運算出元素的寬度實在很無趣，所以終於出現了一個叫做 <code>box-sizing</code> 的 CSS 屬性。當你設定一個元素樣式為 <code>box-sizing: border-box;</code>，這個元素的內距和邊框將不會增加元素本身的寬度。我們用跟上一頁一樣的例子，但我們將兩個元素都設定了 <code>box-sizing: border-box;</code> ：
+</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.simple</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">500px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">20px</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+     <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+          <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.fancy</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">500px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">20px</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span> <span class="k">solid</span> <span class="nb">blue</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+     <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+          <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<div class="simple elem">
+  <span class="label">&lt;div class="simple"></span>
+  <p>
+    我們現在一樣大小了！
+  </p>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<div class="fancy elem">
+  <span class="label">&lt;div class="fancy"></span>
+  <p>
+    喔耶！
+  </p>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<p class="content">
+  這樣寫好像沒有幫助多少，有些 CSS 開發人員想要將這個屬性套用到所有元素上，此時你可以將以下 CSS 樣式套用在頁面上：
+</p>
+
+<div class="highlight"><pre><code class="css"><span class="o">*</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+     <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+          <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p class="content">
+  這樣可以確保所有元素的寬度都可以用比較直觀的方式來定義。
+</p>
+
+<p class="content">
+  因為 <code>box-sizing</code> 算是個比較新的屬性，所以你還應該還是要加上我之前在例子中使用的 <code>-webkit-</code> 和 <code>-moz-</code> 前綴（Prefixes），這樣才能啟用特定瀏覽器實驗中的 CSS 特性。請記得該屬性從 <a href="http://caniuse.com/#search=box-sizing">IE8+</a> 之後就開始支援。
+</p>
+
+      
+
+        <div class="nav-wrapper">
+
+          
+            <a class="nav prev" href="box-model.html">上一頁</a>
+          
+
+          
+            <a class="nav next" href="position.html">下一頁</a>
+          
+
+        </div>
+
+      
+
+      
+        <footer>
+          6 / 19
+        </footer>
+      
+
+    </div>
+
+    <div id="share">
+
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://learnlayout.com/">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+
+      <li>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Flearnlayout.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+      </li>
+
+      <li>
+        <div class="g-plusone" data-size="medium"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </li>
+
+      <li id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></a>
+      </li>
+
+    </div>
+    <div id="advertisements">
+      <span>Ads by <a href="http://bocoup.com">Bocoup</a></span>
+      <script type="text/javascript">var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+      <script type="text/javascript">
+        var ados = ados || {};
+        ados.run = ados.run || [];
+        ados.run.push(function() {
+          /* load placement for account: Bocoup, site: Learn Layout, size: 0x0 - Static Text Link*/
+          ados_add_placement(4433, 27632, "azk92758", 20);
+          ados_load();
+        });
+      </script>
+      <div id="azk92758"></div>
+    </div>
+
+  </body>
+</html>

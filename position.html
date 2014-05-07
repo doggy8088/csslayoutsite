@@ -1,0 +1,285 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+      <title>CSS - 關於 position 屬性</title>
+    
+    <meta name="viewport" content="width=600">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/code.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35945753-1']);
+  _gaq.push(['_setDomainName', 'learnlayout.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+  </head>
+  <body class="ltr">
+
+    <div id="logo">
+      <a href="/">
+        <img src="images/logo.png">
+        <span>學習 CSS 版面配置</span>
+      </a>
+    </div>
+
+    <div id="menu">
+      <a class="home-link" href="/">首頁</a>
+      <a href="toc.html">目錄</a>
+    </div>
+
+    <div id="container">
+
+      
+        <h1 class="content">關於 position 屬性</h1>
+      
+
+      <p class="content">
+  為了設計出更複雜的版面配置，我們需要探討關於 <code>position</code> 這個屬性。它有一大堆的屬性值，且這些屬性值不但很難懂，也特別難記憶。讓我們一個一個介紹吧，不過也建議你把這頁加入到我的最愛（書籤）裡。
+</p>
+
+<h2 class="content">
+  static
+</h2>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.static</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">static</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<div class="elem">
+  <span class="label">&lt;div class="static"></span>
+  <p>
+     <code>static</code> 是預設值。任何套用 <code>position: static;</code> 的元素「不會被特別定位」在頁面上特定位置，而是照著瀏覽器預設的配置自動排版在頁面上，所有其他的屬性值都代表該元素會被定位在頁面上。
+  </p>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<h2 class="content">
+  relative
+</h2>
+
+<style>
+  .relative1 {
+    position: relative;
+  }
+  .relative2 {
+    position: relative;
+    top: -20px;
+    left: 20px;
+    background-color: white;
+    width: 500px;
+  }
+</style>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.relative1</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.relative2</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+  <span class="k">top</span><span class="o">:</span> <span class="m">-20px</span><span class="p">;</span>
+  <span class="k">left</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">500px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<div class="relative1 elem">
+  <span class="label">&lt;div class="relative1"></span>
+  <p>
+     <code>relative</code> 表現的和 <code>static</code> 一樣，除非你增加了一些額外的屬性。
+  </p>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<div class="relative2 elem elem-red">
+  <span class="label">&lt;div class="relative2"></span>
+  <p>
+    在一個設定為 <code>position: relative</code> 的元素內設定 <code>top</code> 、 <code>right</code> 、 <code>bottom</code> 和 <code>left</code> 屬性，會使其元素「相對地」調整其原本該出現的所在位置，而不管這些「相對定位」過的元素如何在頁面上移動位置或增加了多少空間，都不會影響到原本其他元素所在的位置。
+  </p>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<h2 class="content">
+  fixed
+</h2>
+
+<style>
+  .fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    background-color: white;
+    z-index: 9999;
+  }
+</style>
+
+<div class="fixed elem elem-green">
+  <span class="label">&lt;div class="fixed"></span>
+  <p>
+    哈囉～ 先不要太關注我！
+  </p>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<p class="content">
+  固定定位（<code>position: fixed</code>）的元素會相對於瀏覽器視窗來定位，這意味著即便頁面捲動，它還是會固定在相同的位置。和 <code>relative</code> 一樣，我們會使用 <code>top</code> 、 <code>right</code> 、 <code>bottom</code> 和 <code>left</code> 屬性來定位。
+</p>
+
+<p class="content">
+  我相信你已經注意到頁面右下角的固定定位元素，你現在可以注意看一下，這裡有它所使用的 CSS 樣式：
+</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.fixed</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">fixed</span><span class="p">;</span>
+  <span class="k">bottom</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">right</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p class="content">
+  固定定位元素不會保留它原本在頁面應有的空間，不會跟其他元素的配置互相干擾。
+</p>
+
+<p class="content">
+  令人驚訝的是，行動版裝置上的瀏覽器對 <code>fixed</code> 的支援度比想像的還差很多。<a href="http://bradfrostweb.com/blog/mobile/fixed-position/">學習關於此問題的相關文章</a>.
+</p>
+
+<h2 class="content">
+  absolute
+</h2>
+
+<style>
+  .relative {
+    position: relative;
+    width: 600px;
+    height: 400px;
+  }
+  .absolute {
+    position: absolute;
+    top: 120px;
+    right: 0;
+    width: 300px;
+    height: 200px;
+  }
+</style>
+
+<p class="content">
+   <code>absolute</code> 應該是最弔詭的 position 屬性值。<code>absolute</code> 與 <code>fixed</code> 的行為很像，不一樣的地方在於 <code>absolute</code> 的元素的定位是在他所處容器的相對位置。當你有設定 <code>top</code> 、 <code>right</code> 、 <code>bottom</code> 和 <code>left</code> 屬性的時候，如果它的上層元素是個 div，那麼這個 <code>absolute</code> 元素在定位的時候，就是相對於這個 div 的絕對位置。如果你的 <code>absolute</code> 元素並沒有設定 <code>top</code> 、 <code>right</code> 、 <code>bottom</code> 和 <code>left</code> 屬性的話，那麼這個元素的定位就是相對於該網頁所有內容（也就是 &lt;body&gt; 元素）最左上角的絕對位置，看起來就是這張網頁的絕對位置一樣，所以當你的畫面在捲動時，該元素還是會隨著頁面捲動。記住，只要 <code>static</code>　是「不會被特別定位」的定位設定，其他的屬性值都算是「可以被定位」的元素。
+</p>
+
+<p class="content">
+  這裡有一個簡單的例子：
+</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.relative</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">600px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.absolute</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+  <span class="k">top</span><span class="o">:</span> <span class="m">120px</span><span class="p">;</span>
+  <span class="k">right</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">300px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<div class="relative elem">
+  <span class="label">&lt;div class="relative"></span>
+  <p>
+    這個元素是相對定位的，如果它是 <code>position: static;</code>，那麼它的子元素如果套用「絕對定位」的話，就會跳過它，並直接參考 body 元素的相對位置。
+  </p>
+  <div class="absolute elem elem-red">
+    <span class="label">&lt;div class="absolute"></span>
+    <p>
+      這個元素被設定成絕對定位（<code>position: absolute;</code>），它會相對於它的父元素進行定位（相對於父元素的絕對定位）。
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </div>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<p class="content">
+  這部分確實比較難以理解，但它是讓你可以設計出一個良好 CSS 版面配置的必要知識。下一頁我們將會使用 <code>position</code> 來做出更實務的範例。
+</p>
+
+      
+
+        <div class="nav-wrapper">
+
+          
+            <a class="nav prev" href="box-sizing.html">上一頁</a>
+          
+
+          
+            <a class="nav next" href="position-example.html">下一頁</a>
+          
+
+        </div>
+
+      
+
+      
+        <footer>
+          7 / 19
+        </footer>
+      
+
+    </div>
+
+    <div id="share">
+
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://learnlayout.com/">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+
+      <li>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Flearnlayout.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+      </li>
+
+      <li>
+        <div class="g-plusone" data-size="medium"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </li>
+
+      <li id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></a>
+      </li>
+
+    </div>
+    <div id="advertisements">
+      <span>Ads by <a href="http://bocoup.com">Bocoup</a></span>
+      <script type="text/javascript">var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+      <script type="text/javascript">
+        var ados = ados || {};
+        ados.run = ados.run || [];
+        ados.run.push(function() {
+          /* load placement for account: Bocoup, site: Learn Layout, size: 0x0 - Static Text Link*/
+          ados_add_placement(4433, 27632, "azk92758", 20);
+          ados_load();
+        });
+      </script>
+      <div id="azk92758"></div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+      <title>CSS - 百分比寬度</title>
+    
+    <meta name="viewport" content="width=600">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/code.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35945753-1']);
+  _gaq.push(['_setDomainName', 'learnlayout.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+  </head>
+  <body class="ltr">
+
+    <div id="logo">
+      <a href="/">
+        <img src="images/logo.png">
+        <span>學習 CSS 版面配置</span>
+      </a>
+    </div>
+
+    <div id="menu">
+      <a class="home-link" href="/">首頁</a>
+      <a href="toc.html">目錄</a>
+    </div>
+
+    <div id="container">
+
+      
+        <h1 class="content">百分比寬度</h1>
+      
+
+      <p class="content">
+  百分比是一種相對於目前容器元素寬度的單位。它對圖片很有用：如下我們讓圖片寬度永遠等於容器寬度的 50%，請試著將頁面縮小來看看效果！
+</p>
+
+<style>
+  .clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  article img {
+    float: right;
+    width: 50%;
+  }
+</style>
+
+<div class="highlight"><pre><code class="css"><span class="nt">article</span> <span class="nt">img</span> <span class="p">{</span>
+  <span class="k">float</span><span class="o">:</span> <span class="k">right</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">50</span><span class="o">%</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<article class="elem elem-green content clearfix">
+  <span class="label">&lt;article class="clearfix"></span>
+  <img src="images/ilta.png" alt="an image">
+  <p>
+    你甚至還能同時使用 <code>min-width</code> 與 <code>max-width</code> 來限制圖片的最大或最小寬度！
+  </p>
+  <span class="endlabel">&lt;/article></span>
+</article>
+
+<div class="content">
+  <h2>百分比寬度的版面配置</h2>
+</div>
+
+<p class="content">
+  你可以用百分比做版面配置，但是這需要更多的工作。在下面的例子中，當視窗寬度很窄時 <code>nav</code> 的內容就會被擠壓得非常難看。總之，你要選一種最合適你內容的方式來排版。
+</p>
+
+<style>
+  nav.elem {
+    float: left;
+    width: 25%;
+  }
+  section {
+    margin-left: 25%;
+  }
+</style>
+
+<div class="highlight"><pre><code class="css"><span class="nt">nav</span> <span class="p">{</span>
+  <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">25</span><span class="o">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">section</span> <span class="p">{</span>
+  <span class="k">margin-left</span><span class="o">:</span> <span class="m">25</span><span class="o">%</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<div class="container elem">
+  <span class="label">&lt;div class="container"></span>
+
+  <nav class="elem elem-red">
+    <span class="label">&lt;nav></span>
+    <ul>
+      <li>
+        <a href="percent.html">首頁</a>
+      </li>
+      <li>
+        <a href="percent.html">關於我們</a>
+      </li>
+      <li>
+        <a href="percent.html">產品資訊</a>
+      </li>
+      <li>
+        <a href="percent.html">服務項目</a>
+      </li>
+      <li>
+        <a href="percent.html">作品展示</a>
+      </li>
+      <li>
+        <a href="percent.html">聯絡我們</a>
+      </li>
+    </ul>
+    <span class="endlabel">&lt;/nav></span>
+  </nav>
+
+  <section class="elem elem-green">
+    <span class="label">&lt;section></span>
+    <p>
+      當版面配置很窄時， <code>nav</code> 就會被擠扁。更糟的是，你不能在 nav 上使用 <code>min-width</code> 屬性來修復這個問題，因為視窗太小時，右邊的那欄的內容還是會壓到 <code>nav</code> 上面。
+    </p>
+    <span class="endlabel">&lt;/section></span>
+  </section>
+
+  <section class="elem elem-green ipsum">
+    <span class="label">&lt;section></span>
+    <p>
+      天布麼次，今親他利用或母電氣能真友老久來進登出總形：國大系思樂麼問做去將地樹作、維你我們，師為什那，會輕步省生一們些的間海學了；能大作以電回球地現廠美馬方，別到最刻親個神故靜西招國老北氣反大育發商告味必資始定可對謝度的！找謝對環的片他這下：母來感從還，叫我火教會經神送兒沒業是地場色是身收但進經道。媽兒們有先他怕雖發形的手最出在個是我不引最引現小企是而？一子很及女種走？他傳樣會當工視各過男二年傳，但式希叫裡上優經的友定你……不前空國會世解，也斯他不體裡一光車別？加去命最點著如推著人所間國作感我觀，可場是過入指待說，理求面輕美事福出過白到片不是的快究是漸片力男創北一落我成不，精能等動張色輪酒、吃理站毒上出一，黃時回趣吃然，意小童提，到苦際一出如遊軍現媽濟手喜……現結從過計不太聞經是她！變連事成通，中財陸呢十母裝有他成綠上童不個。
+    </p>
+    <span class="endlabel">&lt;/section></span>
+  </section>
+
+</div>
+
+      
+
+        <div class="nav-wrapper">
+
+          
+            <a class="nav prev" href="float-layout.html">上一頁</a>
+          
+
+          
+            <a class="nav next" href="media-queries.html">下一頁</a>
+          
+
+        </div>
+
+      
+
+      
+        <footer>
+          13 / 19
+        </footer>
+      
+
+    </div>
+
+    <div id="share">
+
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://learnlayout.com/">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+
+      <li>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Flearnlayout.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+      </li>
+
+      <li>
+        <div class="g-plusone" data-size="medium"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </li>
+
+      <li id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></a>
+      </li>
+
+    </div>
+    <div id="advertisements">
+      <span>Ads by <a href="http://bocoup.com">Bocoup</a></span>
+      <script type="text/javascript">var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+      <script type="text/javascript">
+        var ados = ados || {};
+        ados.run = ados.run || [];
+        ados.run.push(function() {
+          /* load placement for account: Bocoup, site: Learn Layout, size: 0x0 - Static Text Link*/
+          ados_add_placement(4433, 27632, "azk92758", 20);
+          ados_load();
+        });
+      </script>
+      <div id="azk92758"></div>
+    </div>
+
+  </body>
+</html>
